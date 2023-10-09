@@ -8,6 +8,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import javax.swing.plaf.PanelUI;
 import java.util.List;
 
 @Service
@@ -22,13 +23,30 @@ public class EmailService {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
             try{
                 mimeMessageHelper.setTo(user.getEmail());
-                mimeMessageHelper.setTo(subject);
-                mimeMessageHelper.setTo(body);
+                mimeMessageHelper.setSubject(subject);
+                mimeMessageHelper.setText(body, true);
+                javaMailSender.send(mimeMessage);
+
             }catch ( MessagingException messagingException)
             {
                 messagingException.printStackTrace();
             }
         }
 
+    }
+    public void sendMailByUser(String toEmail, String subject, String body)
+    {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
+        try{
+            mimeMessageHelper.setTo(toEmail);
+            mimeMessageHelper.setSubject(subject);
+            mimeMessageHelper.setText(body, true);
+            javaMailSender.send(mimeMessage);
+
+        }catch ( MessagingException messagingException)
+        {
+            System.out.println(messagingException.getMessage());
+        }
     }
 }
