@@ -2,16 +2,16 @@
   {
     "name": "Azeem Khan",
     "age": 24,
-    "email": "azeemkhan123iimt@gmail.com"
+    "email": "azeem@example.com"
   },
   {
     "name": "Utkarsh Gupta",
     "age": 23,
-    "email": "utkarshgupta2255@gmail.com"
+    "email": "utkarshgupta@example.com"
   },
   {
     "name": "Rahul Singh",
     "age": 23,
-    "email": "nathawat.singhrahul@gmail.com"
+    "email": "singhrahul@example.com"
   }
 ]
