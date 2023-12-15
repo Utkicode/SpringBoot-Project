@@ -1,9 +1,5 @@
 package com.utkicode.Sendingemail.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 public class EmailRequest {

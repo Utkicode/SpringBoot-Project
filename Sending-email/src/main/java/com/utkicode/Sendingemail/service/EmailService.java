@@ -34,14 +34,16 @@ public class EmailService {
         }
 
     }
-    public void sendMailByUser(String toEmail, String subject, String body)
+    public void sendMailByUser(String toEmail, String subject, String body, String name)
     {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
         try{
             mimeMessageHelper.setTo(toEmail);
             mimeMessageHelper.setSubject(subject);
-            mimeMessageHelper.setText(body, true);
+         //mimeMessageHelper.setText(body, true);
+            String emailBody = "Dear " + name + ",\n\n" + body;
+            mimeMessageHelper.setText(emailBody, true);
             javaMailSender.send(mimeMessage);
 
         }catch ( MessagingException messagingException)

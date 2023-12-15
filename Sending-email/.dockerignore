@@ -1,0 +1,15 @@
+# Ignore Maven target directory
+/target/
+
+# Ignore IntelliJ IDEA and Eclipse files
+.idea/
+.classpath
+.project
+.settings/
+
+# Ignore Git files
+.git/
+
+# Ignore Docker-specific files
+Dockerfile.*
+.dockerignore

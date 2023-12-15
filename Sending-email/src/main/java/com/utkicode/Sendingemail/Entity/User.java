@@ -1,9 +1,6 @@
 package com.utkicode.Sendingemail.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,12 +11,14 @@ public class User {
     private String name;
     private int age;
     private String email;
+    private String message;
 
-    public User(String id, String name, int age, String email) {
+    public User(String id, String name, int age, String email, String message) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
+        this.message = message;
     }
 
     public String getId() {
@@ -52,5 +51,24 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

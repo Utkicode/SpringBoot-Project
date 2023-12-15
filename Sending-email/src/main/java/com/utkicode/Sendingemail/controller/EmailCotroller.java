@@ -41,10 +41,11 @@ public class EmailCotroller {
     public ResponseEntity<String> sendEmail(
             @RequestParam String toEmail,
             @RequestParam String subject,
-            @RequestParam String body) {
+            @RequestParam String body,
+            @RequestParam String name) {
         try {
-            emailService.sendMailByUser(toEmail,subject,body);
-            return ResponseEntity.status(HttpStatus.OK).body("Email sent to " + toEmail);
+            emailService.sendMailByUser(toEmail,subject,body, name);
+            return ResponseEntity.status(HttpStatus.OK).body("Email sent to " + toEmail + " " + name);
         }catch (Exception exception)
         {
             System.out.println(exception);
